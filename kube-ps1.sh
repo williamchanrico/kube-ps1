@@ -328,6 +328,7 @@ kube_ps1() {
   fi
 
   # Context
+  KUBE_PS1_CONTEXT=$(echo $KUBE_PS1_CONTEXT | awk -F'_' '{print $NF}')
   KUBE_PS1+="$(_kube_ps1_color_fg $KUBE_PS1_CTX_COLOR)${KUBE_PS1_CONTEXT}${KUBE_PS1_RESET_COLOR}"
 
   # Namespace
